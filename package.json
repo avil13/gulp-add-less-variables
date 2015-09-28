@@ -1,0 +1,29 @@
+{
+  "name": "gulp-add-less-variables",
+  "version": "1.0.0",
+  "description": "Add varible to LESS file before compiling.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avil13/gulp-add-less-variables.git"
+  },
+  "keywords": [
+    "less",
+    "variables",
+    "css",
+    "gulpplugin"
+  ],
+  "author": "Aleksey Pivkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avil13/gulp-add-less-variables/issues"
+  },
+  "homepage": "https://github.com/avil13/gulp-add-less-variables#readme",
+  "dependencies": {
+    "gulp-util": "^3.0.6",
+    "through2": "^2.0.0"
+  }
+}
