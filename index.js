@@ -11,14 +11,23 @@ module.exports = function(options) {
         if (file.isStream()) {
             return cb(new gutil.PluginError("gulp-less-variables", "Streaming not supported"));
         }
-        var varible = [];
+        var variable = [];
+        var value;
         for (var v in options) {
-            varible.push("@" + v + ": '" + options[v] + "';\n");
+            value = options[v];
+            if (Array.isArray(value)) {
+                value = value.map(function(v){
+                    return "'" + v + "'";
+                }).join(', ');
+            } else {
+                value = "'" + v + "'";
+            }
+            variable.push("@" + v + ": " + value + ";\n");
         }
-        varible = varible.join("\n\n\n");
+        variable = variable.join("\n\n\n");
         // Return file
         var str = file.contents.toString('utf8');
-        file.contents = new Buffer(varible + str);
+        file.contents = new Buffer(variable + str);
         cb(null, file);
     });
 };
