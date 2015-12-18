@@ -12,9 +12,9 @@ var lessVars = require('gulp-add-less-variables');
 gulp.task('less', function() {
     gulp.src(lessFiles)
         .pipe(lessVars({
-            var1: '10px',
-            var2: '20px',
-            var3: '30px'
+            var1: '10px', // => @var1: '10px'
+            var2: '20px', // => @var2: '20px'
+            var3: ['#000000', '#ffffff', '#acacac'] // => @var3: '#000000, #ffffff, #acacac'
         }))
         .pipe(less())
         .pipe(concat('style.css'))
