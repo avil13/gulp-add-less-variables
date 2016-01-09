@@ -1,6 +1,6 @@
 {
   "name": "gulp-add-less-variables",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Add varible to LESS file before compiling.",
   "main": "index.js",
   "scripts": {
