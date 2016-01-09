@@ -2,6 +2,7 @@ var gutil = require("gulp-util"),
     through = require("through2"),
     fs = require("fs"),
     path = require("path");
+
 module.exports = function(options) {
     options = options || {};
     return through.obj(function(file, enc, cb) {
@@ -16,15 +17,13 @@ module.exports = function(options) {
         for (var v in options) {
             value = options[v];
             if (Array.isArray(value)) {
-                value = value.map(function(v){
-                    return "'" + v + "'";
+                value = value.map(function(val){
+                    return "'" + val + "'";
                 }).join(', ');
-            } else {
-                value = "'" + v + "'";
             }
-            variable.push("@" + v + ": " + value + ";\n");
+            variable.push("@" + v + ": " + value + ";");
         }
-        variable = variable.join("\n\n\n");
+        variable = variable.join("\n");
         // Return file
         var str = file.contents.toString('utf8');
         file.contents = new Buffer(variable + str);
