@@ -2,6 +2,9 @@
 
 Add varibles to less files in gulp-plugin config options.
 
+[![Package Quality](http://npm.packagequality.com/badge/gulp-add-less-variables.png)](http://packagequality.com/#?package=gulp-add-less-variables)
+
+
 example:
 
 ```JavaScript
